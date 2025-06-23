@@ -33,3 +33,7 @@ cd florale-intelligenz
 4. `pip install -r requirements.txt`
 
 
+
+![alt text](https://www.pinterest.com/pin/184999497177681775/)
+
+
