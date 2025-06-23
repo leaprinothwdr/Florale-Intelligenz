@@ -34,6 +34,6 @@ cd florale-intelligenz
 
 
 
-![alt text](https://www.pinterest.com/pin/184999497177681775/)
+![alt text](Schreibtisch/pandas.jpg)
 
 
