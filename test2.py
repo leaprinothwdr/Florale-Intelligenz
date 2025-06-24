@@ -32,7 +32,7 @@ plt.title('Boxplot der Sepal-Länge')
 
 plt.show()
 # %% [markdown]
-## Interpretation von 2 
+# # Interpretation von 2 
 # Die Hälfte der Sepal-Länge (aus beiden Diagrammen ablesbar) befindet sich zwischen ca. 5,2 und 6,5, der Median liegt bei ca. 5,8.\n",
 # Der kleinste Wert liegt bei ca. 4,3 und der größte Wert bei ca. 7,9.
 # Die wenigsten Blumen haben eine Länge von 7,1-7,5, wie man aus dem linken Diagramm ablesen kann.
@@ -45,7 +45,7 @@ sns.scatterplot(data=df, x='sepal_length_cm', y='petal_length_cm', hue='species'
 plt.title('Zusammenhang zwischen Sepal- und Petal-Länge')
 plt.show()
 # %% [markdown]
-## Interpretation von 3.
+# # Interpretation von 3.
 # Setosas haben eine kleine Sepal- als auch eine kleine Petal-Länge.
 # Virginicas haben eine lange Sepal- als auch eine lange Petal-Länge. Es gibt jedoch einen Ausreißer, bei dem die Sepal-Länge kürzer ist als bei den anderen Virginicas.
 # Die Versicolors liegen zwischen den Setosas und Verginicas, grenzen jedoch mehr an die Virginicas als an die Setosas.
@@ -83,6 +83,26 @@ num_data = df.select_dtypes(include= "number") # numerische Daten selektieren
 Z = hierarchy.linkage(num_data)  
 hierarchy.dendrogram(Z) # Dendogram erstellen
 
+# %%
+# KMeans
+kmeans = KMeans(n_clusters=3, random_state=0)
+df['cluster_kmeans'] = kmeans.fit_predict(num_data)
+
+# Agglomerative Clustering
+agg = AgglomerativeClustering(n_clusters=3)
+df['cluster_agg'] = agg.fit_predict(num_data)
+
+# Visualisierung
+sns.scatterplot(data=df, x='sepal_length_cm', y='petal_length_cm', hue='cluster_kmeans', palette='Set2')
+plt.title('KMeans Clustering')
+plt.show()
+
+sns.scatterplot(data=df, x='sepal_length_cm', y='petal_length_cm', hue='cluster_agg', palette='Set1')
+plt.title('Agglomerative Clustering')
+plt.show()
+# %% [markdown]
+# Bei 2 Clustern wäre es underfitted. Bei 4 Cluster wäre es overfitted.
+# Deswegen haben wir uns bewusst für 3 Cluster entschieden.
 # %% [markdown]
 # # Supervised Learning
 
