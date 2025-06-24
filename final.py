@@ -105,28 +105,3 @@ plt.show()
 # Deswegen haben wir uns bewusst für 3 Cluster entschieden.
 # %% [markdown]
 # # Supervised Learning
-
-# %% [markdown]
-# ## 1. Daten für Machine Learning vorbereiten (X/y, train/test)
-# Zuerst laden wir die notwendigen Bibliotheken und bereiten unsere Daten vor. Wir trennen die Features (X) von der Zielvariable (y) und teilen diese dann in Trainings- und Testsets auf, um unsere Modelle später bewerten zu können.
-
-# %%
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-# Features (X) und Zielvariable (y) definieren
-# Wir verwenden alle numerischen Spalten außer 'species' als Features
-X = df[['sepal_length_cm', 'sepal_width_cm', 'petal_length_cm', 'petal_width_cm']]
-y = df['species']
-
-# Daten in Trainings- und Testsets aufteilen
-# test_size=0.3 bedeutet, dass 30% der Daten für das Testset verwendet werden
-# random_state sorgt für reproduzierbare Ergebnisse
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-
-# %% [markdown]
-# ## 2. Zwei unterschiedliche Machine Learning Modelle trainieren
