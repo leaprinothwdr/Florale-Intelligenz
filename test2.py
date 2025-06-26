@@ -102,7 +102,7 @@ plt.title('Agglomerative Clustering')
 plt.show()
 # %% [markdown]
 # Bei 2 Clustern wäre es underfitted. Bei 4 Cluster wäre es overfitted.
-# Deswegen haben wir uns bewusst für 3 Cluster entschieden.
+# Deswegen haben wir uns bewusst für 3 Cluster entschieden. Die beiden Clusteralgorithmen sind bis auf 3 Punkte ident. Beide kommen also (fast) zum gleichen Ergebnis. 
 # %% [markdown]
 # # Supervised Learning
 
