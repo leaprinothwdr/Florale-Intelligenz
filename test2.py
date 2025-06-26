@@ -213,3 +213,6 @@ plt.show()
 
 # %% [markdown]
 # ## Interpreattion
+# # **Fazit:**
+# 
+# Für diese spezifische Aufteilung der Daten hat das einfachere Modell der Logistischen Regression das komplexere Random-Forest-Modell knapp übertroffen. Dies kann in der Praxis vorkommen, insbesondere bei Datensätzen, die wie der Iris-Datensatz linear gut trennbar sind. Es unterstreicht die Wichtigkeit, immer verschiedene Modelle zu testen und nicht anzunehmen, dass ein komplexeres Modell automatisch besser ist. Beide Modelle liefern jedoch sehr gute Ergebnisse und sind für die Klassifikation der Iris-Pflanzen gut geeignet.
