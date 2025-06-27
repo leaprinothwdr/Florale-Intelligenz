@@ -34,6 +34,6 @@ cd florale-intelligenz
 
 
 
-![alt text](Schreibtisch/pandas.jpg)
+![Pandas](/ImportPandasBild_erstelltMITsora.png)
 
 
