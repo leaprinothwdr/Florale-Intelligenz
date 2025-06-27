@@ -1,6 +1,6 @@
 # Botanischer Garten – Blumenanalyse-Projekt
 
-Ein Gruppenprojekt im Rahmen der Data-Science-Vorlesung
+Ein Gruppenprojekt im Rahmen der Data-Science-Vorlesung (SS2025) von Annika, Lea, Linda und Max.  
 Willkommen im wahrscheinlich botanischsten Python-Projekt aller Zeiten!
 Hier dreht sich alles um Daten, Blumen – und natürlich Pandas (die Bibliothek, nicht das Tier … leider 😿).
 
