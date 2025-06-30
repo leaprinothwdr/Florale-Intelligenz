@@ -69,6 +69,12 @@ sns.pairplot(df, hue='species')
 plt.show()
 
 # %% [markdown]
+## Interpretation
+# Die Paarplot-Matrix zeigt die Verteilung und Beziehungen zwischen den verschiedenen Merkmalen.
+# Es ist deutlich, dass die verschiedenen Iris-Spezies unterschiedliche morphologische Merkmale aufweisen.
+# Setosa ist klar von den anderen beiden Arten getrennt!, während Versicolor und Virginica näher beieinander liegen und teilweise überlappen.
+
+# %% [markdown]
 # # Unsupervised Learning
 
 # %%
