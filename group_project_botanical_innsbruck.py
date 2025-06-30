@@ -257,4 +257,3 @@ plt.show()
 # Ergebnisse und sind für die Klassifikation der Iris-Pflanzen gut geeignet. Für den Botanischen Garten in Innsbruck bietet die Logistische Regression ein 
 # einfaches und leistungsstarkes Werkzeug zur automatischen Identifikation.
 
-# %%
