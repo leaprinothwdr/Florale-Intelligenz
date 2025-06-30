@@ -32,7 +32,7 @@ plt.title('Boxplot der Sepal-Länge')
 
 plt.show()
 # %% [markdown]
-# # Interpretation von 2 
+# # Interpretation
 # Die Hälfte der Sepal-Länge (aus beiden Diagrammen ablesbar) befindet sich zwischen ca. 5,2 und 6,5, der Median liegt bei ca. 5,8.\n",
 # Der kleinste Wert liegt bei ca. 4,3 und der größte Wert bei ca. 7,9.
 # Die wenigsten Blumen haben eine Länge von 7,1-7,5, wie man aus dem linken Diagramm ablesen kann.
@@ -45,7 +45,7 @@ sns.scatterplot(data=df, x='sepal_length_cm', y='petal_length_cm', hue='species'
 plt.title('Zusammenhang zwischen Sepal- und Petal-Länge')
 plt.show()
 # %% [markdown]
-# # Interpretation von 3.
+# # Interpretation
 # Setosas haben eine kleine Sepal- als auch eine kleine Petal-Länge.
 # Virginicas haben eine lange Sepal- als auch eine lange Petal-Länge. Es gibt jedoch einen Ausreißer, bei dem die Sepal-Länge kürzer ist als bei den anderen Virginicas.
 # Die Versicolors liegen zwischen den Setosas und Verginicas, grenzen jedoch mehr an die Virginicas als an die Setosas.
@@ -57,7 +57,7 @@ sns.heatmap(corr, annot=True, cmap='coolwarm')
 plt.title('Korrelationsmatrix')
 plt.show()
 # %% [markdown]
-## Interpretation von 4.
+## Interpretation
 # Korrelation:
 # r = +1: perfekte positive Korrelation
 # r = -1: perfekt negative Korrelation
@@ -67,7 +67,6 @@ plt.show()
 # %%
 sns.pairplot(df, hue='species')
 plt.show()
-# %%
 
 # %% [markdown]
 # # Unsupervised Learning
@@ -77,11 +76,15 @@ from sklearn.cluster import KMeans, AgglomerativeClustering
 from scipy.cluster import hierarchy
 
 # %%
-num_data = df.select_dtypes(include= "number") # numerische Daten selektieren
+num_data = df.select_dtypes(include= "number")
 
 # %%
 Z = hierarchy.linkage(num_data)  
-hierarchy.dendrogram(Z) # Dendogram erstellen
+hierarchy.dendrogram(Z)
+
+# %% [markdown]
+# Nach dem Dendrogramm können wir ablesen, dass es 3 Cluster gibt.
+# Wir können auch ablesen, dass es 2 Cluster gibt, die sehr nahe beieinander liegen. 
 
 # %%
 # KMeans
@@ -101,13 +104,17 @@ sns.scatterplot(data=df, x='sepal_length_cm', y='petal_length_cm', hue='cluster_
 plt.title('Agglomerative Clustering')
 plt.show()
 # %% [markdown]
-# Bei 2 Clustern wäre es underfitted. Bei 4 Cluster wäre es overfitted.
-# Deswegen haben wir uns bewusst für 3 Cluster entschieden. Die beiden Clusteralgorithmen sind bis auf 3 Punkte ident. Beide kommen also (fast) zum gleichen Ergebnis. 
+# Die Wahl von 3 Clustern, unterstützt durch das Dendrogramm, führt zu einer sinnvollen Gruppierung der Iris-Daten.
+# Beide Algorithmen, KMeans und Agglomerative Clustering, erfassen erfolgreich die natürlichen Strukturen im Datensatz,
+# wie die klare Trennung von Setosa und die teilweise Überlappung von Versicolor und Virginica zeigen. Die nahezu identischen
+# Ergebnisse der beiden Methoden (bis auf drei Ausnahmen) unterstreichen die Robustheit der Clusterstruktur. Diese Interpretation bestätigt,
+# dass die unüberwachte Clusteranalyse die inhärenten Muster in den Daten effektiv aufdeckt und mit der bekannten Verteilung der drei Spezies übereinstimmt.
+
 # %% [markdown]
 # # Supervised Learning
 
 # %% [markdown]
-# ## 1. Daten für's Machine Learning vorbereiten (X/y, train/test)
+# ## Daten für's Machine Learning vorbereiten (X/y, train/test)
 # Zuerst laden wir die notwendigen Bibliotheken und bereiten unsere Daten vor. Wir trennen die Features (X), also die unabhängigen Variablen, von der Zielvariable (y), der Iris-Spezies. Anschließend teilen wir diese Daten in Trainings- und Testsets auf. Das Trainingsset wird zum Trainieren unserer Modelle verwendet, und das Testset dient zur unabhängigen Bewertung der Modellleistung.
 
 # %%
@@ -126,7 +133,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 
 
 # %% [markdown]
-# ## 2. Zwei unterschiedliche Machine Learning Modelle trainieren
+# ## Zwei unterschiedliche Machine Learning Modelle trainieren
 # Wir werden zwei verschiedene Klassifikationsalgorithmen trainieren, um ihre Leistung auf dem Iris-Datensatz zu vergleichen.
 
 # %% [markdown]
@@ -148,7 +155,7 @@ rf_model.fit(X_train, y_train)
 
 
 # %% [markdown]
-# ## 3. Evaluiert eure Modelle mit geeigneten Metriken
+# ## Evaluiert eure Modelle mit geeigneten Metriken
 # Nachdem wir beide Modelle trainiert haben, machen wir Vorhersagen auf dem ungesehenen Testset, um ihre Leistung objektiv zu bewerten. Wir verwenden drei Metriken:
 # 1.  **Accuracy (Genauigkeit):** Der prozentuale Anteil der korrekten Vorhersagen.
 # 2.  **Classification Report:** Bietet eine detaillierte Aufschlüsselung nach Klassen, einschließlich Precision, Recall und F1-Score.
@@ -213,6 +220,8 @@ plt.show()
 
 # %% [markdown]
 # ## Interpreattion
-# # **Fazit:**
-# 
-# Für diese spezifische Aufteilung der Daten hat das einfachere Modell der Logistischen Regression das komplexere Random-Forest-Modell knapp übertroffen. Dies kann in der Praxis vorkommen, insbesondere bei Datensätzen, die wie der Iris-Datensatz linear gut trennbar sind. Es unterstreicht die Wichtigkeit, immer verschiedene Modelle zu testen und nicht anzunehmen, dass ein komplexeres Modell automatisch besser ist. Beide Modelle liefern jedoch sehr gute Ergebnisse und sind für die Klassifikation der Iris-Pflanzen gut geeignet.
+# Für diese spezifische Aufteilung der Daten hat das einfachere Modell der Logistischen Regression das komplexere Random-Forest-Modell knapp übertroffen.
+# Dies kann in der Praxis vorkommen, insbesondere bei Datensätzen, die wie der Iris-Datensatz linear gut trennbar sind. Es unterstreicht die Wichtigkeit, 
+# immer verschiedene Modelle zu testen und nicht anzunehmen, dass ein komplexeres Modell automatisch besser ist. Beide Modelle liefern jedoch sehr gute 
+# Ergebnisse und sind für die Klassifikation der Iris-Pflanzen gut geeignet. Für den Botanischen Garten in Innsbruck bietet die Logistische Regression ein 
+# einfaches und leistungsstarkes Werkzeug zur automatischen Identifikation.
