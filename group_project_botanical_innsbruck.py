@@ -89,8 +89,13 @@ Z = hierarchy.linkage(num_data)
 hierarchy.dendrogram(Z)
 
 # %% [markdown]
-# Nach dem Dendrogramm können wir ablesen, dass es 3 Cluster gibt.
-# Wir können auch ablesen, dass es 2 Cluster gibt, die sehr nahe beieinander liegen. 
+# Das Dendrogramm zeigt die hierarchische Struktur der Cluster im Iris-Datensatz.
+# Die Höhe der Verzweigungen repräsentiert die Distanz zwischen den Clustern.
+# Je höher die Verzweigung, desto weiter entfernt sind die Cluster voneinander.
+# Durch das Dendrogramm können wir die Anzahl der Cluster bestimmen, indem wir eine horizontale Linie ziehen, die die Cluster trennt.
+# In diesem Fall können wir drei Cluster identifizieren, was mit der bekannten Verteilung der Iris-Spezies übereinstimmt.
+# Setosa ist klar von den anderen beiden Arten getrennt, während Versicolor und Virginica näher beieinander
+
 
 # %%
 # KMeans
