@@ -1,3 +1,7 @@
+# %% [markdown]
+# Gruppenarbeit von:
+# Lea Prinoth-Widauer, Annika Stampfl, Johanna Schindl, Linda Marie Potakowskyj und Max Zimmermann
+
 # %%
 import pandas as pd
 from pandas import read_csv
@@ -252,3 +256,5 @@ plt.show()
 # immer verschiedene Modelle zu testen und nicht anzunehmen, dass ein komplexeres Modell automatisch besser ist. Beide Modelle liefern jedoch sehr gute 
 # Ergebnisse und sind für die Klassifikation der Iris-Pflanzen gut geeignet. Für den Botanischen Garten in Innsbruck bietet die Logistische Regression ein 
 # einfaches und leistungsstarkes Werkzeug zur automatischen Identifikation.
+
+# %%
