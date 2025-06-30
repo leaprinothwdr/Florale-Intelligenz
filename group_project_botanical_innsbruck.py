@@ -96,6 +96,22 @@ hierarchy.dendrogram(Z)
 # In diesem Fall können wir drei Cluster identifizieren, was mit der bekannten Verteilung der Iris-Spezies übereinstimmt.
 # Setosa ist klar von den anderen beiden Arten getrennt, während Versicolor und Virginica näher beieinander
 
+# %%
+plt.figure(figsize=(10, 15))  # Größere Figur für bessere Lesbarkeit
+hierarchy.dendrogram(
+    Z,
+    orientation='right',         # Blätter rechts
+    labels=df['species'].values,  # Species als Labels
+    leaf_font_size=8             # Kleinere Schriftgröße
+)
+plt.title('Dendrogramm des Iris-Datensatzes')
+plt.xlabel('Distanz')
+plt.ylabel('Proben')
+plt.show()
+
+# %% [markdown]
+# Das Dendrogramm versucht schöner darzustellen bzw Lesbarkeit zu verbessern.
+
 
 # %%
 # KMeans
